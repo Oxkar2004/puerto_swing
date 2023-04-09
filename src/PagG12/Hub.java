@@ -1,5 +1,4 @@
 package PagG12;
-import java.util.Arrays;
 public class Hub {
     private Contenedor[][] m;
     public Hub(){
@@ -81,6 +80,15 @@ public class Hub {
                     if (m[i][col] == null) {
                         m[i][col] = c;
                         return;
+                    }
+                }
+            }else if(p==3){
+                for (int i = m.length - 1; i >= 0; i--) {
+                    for (int j = 2; j < 12 ; j++) {
+                        if(m[i][j]==null){
+                            m[i][j]=c;
+                            return;
+                        }
                     }
                 }
             }

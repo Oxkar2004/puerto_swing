@@ -1,5 +1,4 @@
 package PagG12;
-import java.util.Arrays;
 public class Contenedor {
     private final int id;
     private int peso,prioridad;
@@ -16,7 +15,7 @@ public class Contenedor {
         prioridad=3;
     }
 
-    public Contenedor(int id,int peso,int prioridad,String pais,String contenido,String emisor,String receptor){
+    public Contenedor(int id,int peso,int prioridad,String pais,String contenido,String emisor,String receptor,boolean inspeccionado){
 
         this(id);
         this.peso=peso;
@@ -25,13 +24,12 @@ public class Contenedor {
         this.contenido=contenido;
         this.emisor=emisor;
         this.receptor=receptor;
-
+        this.inspeccionado=inspeccionado;
     }
 
     // GETTERS Y SETTERS
 
     public int getId(){
-
         return this.id;
     }
 
@@ -107,17 +105,16 @@ public class Contenedor {
 
         String s= new String();
 
-        s += "ID" + id + "\n";
-        s += "PESO" + peso + "\n";
-        s += "PRIOIRIDAD" + prioridad + "\n";
-        s += "PAIS" + pais + "\n";
-        s += "CONTENIDO" + contenido + "\n";
-        s += "EMISOR" + emisor + "\n";
-        s += "RECEPTOR" + receptor + "\n";
+        s += "ID: " + id + "\n";
+        s += "PESO: " + peso + "\n";
+        s += "PRIORIDAD: " + prioridad + "\n";
+        s += "PAIS: " + pais + "\n";
+        s += "CONTENIDO: " + contenido + "\n";
+        s += "EMISOR: " + emisor + "\n";
+        s += "RECEPTOR: " + receptor + "\n";
 
 
         if(inspeccionado) s += "Inspeccionado\n";
-
         else s += "No inspeccionado\n";
 
         return s;
