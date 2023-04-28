@@ -1,3 +1,5 @@
+//Óscar García Sahuquillo
+
 import PagG12.Contenedor;
 import PagG12.Hub;
 import javax.swing.*;
@@ -38,13 +40,14 @@ public class JavaSwing1 extends JFrame{
     private JLabel Prioridad;
     private JPanel JPanel;
     private JPanel JpanelOperaciones;
+    private JButton buttonPeso;
 
     private Hub hub = new Hub();
 
     public JPanel getHUB() {
         return JPanel;
     }
-    public JavaSwing1(){
+    public JavaSwing1() {
 
         String[] paises = {"Argentina", "España", "Francia", "Italia", "Croacia", "Alemania", "Brasil", "Estados Unidos", "Inglaterra"};
         List<String> listaPaises = new ArrayList<>(Arrays.asList(paises));
@@ -58,6 +61,7 @@ public class JavaSwing1 extends JFrame{
         }
         buttonApilar.addActionListener(new ActionListener() {
             List<Integer> idList = new ArrayList<Integer>();
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 int id = 0;
@@ -78,21 +82,23 @@ public class JavaSwing1 extends JFrame{
                 String receptor = textReceptora.getText();
                 String pais = comboBoxProcedencia.getSelectedItem().toString();
                 int prioridad;
-                if(radioButton1.isSelected()){
-                    prioridad=1;
-                }else if(a2RadioButton.isSelected()){
-                    prioridad=2;
-                }else if(a3RadioButton.isSelected()){
-                    prioridad=3;
-                }else {
-                    prioridad=-1;
+                if (radioButton1.isSelected()) {
+                    prioridad = 1;
+                } else if (a2RadioButton.isSelected()) {
+                    prioridad = 2;
+                } else if (a3RadioButton.isSelected()) {
+                    prioridad = 3;
+                } else {
+                    prioridad = -1;
                 }
                 boolean inspeccionado;
-                if(checkBoxInspeccion.isSelected()){
-                     inspeccionado=true;
-                }else {inspeccionado=false;}
+                if (checkBoxInspeccion.isSelected()) {
+                    inspeccionado = true;
+                } else {
+                    inspeccionado = false;
+                }
 
-                Contenedor m = new Contenedor(id,peso,prioridad,pais,contenido,remitente,receptor,inspeccionado);
+                Contenedor m = new Contenedor(id, peso, prioridad, pais, contenido, remitente, receptor, inspeccionado);
 
                 hub.apilar(m);
                 mostrarEstadoHub();
@@ -125,7 +131,7 @@ public class JavaSwing1 extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = textDatoscont.getText();
-                if(id.isEmpty()) {
+                if (id.isEmpty()) {
                     JOptionPane.showMessageDialog(JPanel, "Debe introducir un ID ", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
@@ -145,14 +151,14 @@ public class JavaSwing1 extends JFrame{
                     JOptionPane.showMessageDialog(JPanel, "El contenedor con el ID " + id + " no está en el HUB", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                JOptionPane.showMessageDialog(JPanel, m.toString() ,  "Datos del contenedor", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(JPanel, m.toString(), "Datos del contenedor", JOptionPane.INFORMATION_MESSAGE);
             }
         });
         buttonCuantos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String p = textField7.getText();
-                if(p.isEmpty()) {
+                if (p.isEmpty()) {
                     JOptionPane.showMessageDialog(JPanel, "Debe introducir una Prioridad ", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
@@ -197,6 +203,14 @@ public class JavaSwing1 extends JFrame{
                         JOptionPane.showMessageDialog(JPanel, sb.toString());
                     }
                 }
+            }
+        });
+       buttonPeso.addActionListener(new ActionListener() {
+            List<Integer> idList = new ArrayList<Integer>();
+            @Override
+             public void actionPerformed(ActionEvent e) {
+                int peso = Integer.parseInt(textPeso.getText());
+                JOptionPane.showMessageDialog(JPanel, "El peso total del hub es:" + hub.peso(peso));
             }
         });
     }

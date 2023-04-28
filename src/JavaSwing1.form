@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="JPanel" layout-manager="GridLayoutManager" row-count="25" column-count="14" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="851" height="590"/>
+      <xy x="20" y="20" width="948" height="600"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -385,6 +385,14 @@
         <border type="none"/>
         <children/>
       </grid>
+      <component id="c91a8" class="javax.swing.JButton" binding="buttonPeso">
+        <constraints>
+          <grid row="15" column="10" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Peso total del hub"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

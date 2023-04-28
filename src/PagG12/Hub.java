@@ -1,6 +1,9 @@
+//Óscar García Sahuquillo
 package PagG12;
+
 public class Hub {
     private Contenedor[][] m;
+    int p=0;
     public Hub(){
 
         this.m = new Contenedor[10][12];
@@ -34,7 +37,7 @@ public class Hub {
             for(int j=0 ; j<m[i].length ; j++){ //COLUMNAS de la fila i
 
                 if(m[i][j] == null) s += "[N]";
-                else s += "[" + m[i][j].getId() + "]";
+                else s += "[" + m[i][j].getId() +"-"+ m[i][j].getPeso() +"]";
 
 
 
@@ -94,5 +97,9 @@ public class Hub {
             }
         }
     }
+    public int peso(int peso){
 
+            p=peso+p;
+        return p;
+    }
 }

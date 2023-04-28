@@ -1,3 +1,4 @@
+//Óscar García Sahuquillo
 package PagG12;
 public class Contenedor {
     private final int id;

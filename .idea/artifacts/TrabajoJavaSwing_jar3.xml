@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TrabajoJavaSwing:jar3">
+    <output-path>$PROJECT_DIR$/out/artifacts/TrabajoJavaSwing_jar3</output-path>
+    <root id="archive" name="TrabajoJavaSwing.jar">
+      <element id="module-output" name="TrabajoJavaSwing" />
+    </root>
+  </artifact>
+</component>
